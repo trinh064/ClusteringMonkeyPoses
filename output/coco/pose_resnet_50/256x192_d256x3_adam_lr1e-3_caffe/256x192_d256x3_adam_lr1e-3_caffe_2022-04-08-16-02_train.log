@@ -1,0 +1,154 @@
+2022-04-08 16:02:22,971 Namespace(cfg='experiments/coco/resnet50/256x192_d256x3_adam_lr1e-3_caffe.yaml', frequent=100, gpus=None, workers=None)
+2022-04-08 16:02:22,974 {'CUDNN': {'BENCHMARK': True, 'DETERMINISTIC': False, 'ENABLED': True},
+ 'DATASET': {'DATASET': 'coco',
+             'DATA_FORMAT': 'jpg',
+             'FLIP': True,
+             'HYBRID_JOINTS_TYPE': '',
+             'ROOT': 'data/coco/',
+             'ROT_FACTOR': 40,
+             'SCALE_FACTOR': 0.3,
+             'SELECT_DATA': False,
+             'TEST_SET': 'val2017',
+             'TRAIN_SET': 'train2017'},
+ 'DATA_DIR': '',
+ 'DEBUG': {'DEBUG': True,
+           'SAVE_BATCH_IMAGES_GT': True,
+           'SAVE_BATCH_IMAGES_PRED': True,
+           'SAVE_HEATMAPS_GT': True,
+           'SAVE_HEATMAPS_PRED': True},
+ 'GPUS': '0',
+ 'LOG_DIR': 'log',
+ 'LOSS': {'USE_TARGET_WEIGHT': True},
+ 'MODEL': {'EXTRA': {'DECONV_WITH_BIAS': False,
+                     'FINAL_CONV_KERNEL': 1,
+                     'HEATMAP_SIZE': array([48, 64]),
+                     'NUM_DECONV_FILTERS': [256, 256, 256],
+                     'NUM_DECONV_KERNELS': [4, 4, 4],
+                     'NUM_DECONV_LAYERS': 3,
+                     'NUM_LAYERS': 50,
+                     'SIGMA': 2,
+                     'TARGET_TYPE': 'gaussian'},
+           'IMAGE_SIZE': array([192, 256]),
+           'INIT_WEIGHTS': True,
+           'NAME': 'pose_resnet',
+           'NUM_JOINTS': 17,
+           'PRETRAINED': 'models/pytorch/imagenet/resnet50-caffe.pth.tar',
+           'STYLE': 'caffe'},
+ 'OUTPUT_DIR': 'output',
+ 'PRINT_FREQ': 100,
+ 'TEST': {'BATCH_SIZE': 32,
+          'BBOX_THRE': 1.0,
+          'COCO_BBOX_FILE': 'data/coco/person_detection_results/COCO_val2017_detections_AP_H_56_person.json',
+          'FLIP_TEST': False,
+          'IMAGE_THRE': 0.0,
+          'IN_VIS_THRE': 0.2,
+          'MODEL_FILE': '',
+          'NMS_THRE': 1.0,
+          'OKS_THRE': 0.9,
+          'POST_PROCESS': True,
+          'SHIFT_HEATMAP': True,
+          'USE_GT_BBOX': True},
+ 'TRAIN': {'BATCH_SIZE': 32,
+           'BEGIN_EPOCH': 0,
+           'CHECKPOINT': '',
+           'END_EPOCH': 140,
+           'GAMMA1': 0.99,
+           'GAMMA2': 0.0,
+           'LR': 0.001,
+           'LR_FACTOR': 0.1,
+           'LR_STEP': [90, 120],
+           'MOMENTUM': 0.9,
+           'NESTEROV': False,
+           'OPTIMIZER': 'adam',
+           'RESUME': False,
+           'SHUFFLE': True,
+           'WD': 0.0001},
+ 'WORKERS': 4}
+2022-04-08 16:02:23,314 => init deconv weights from normal distribution
+2022-04-08 16:02:23,314 => init 0.weight as normal(0, 0.001)
+2022-04-08 16:02:23,314 => init 0.bias as 0
+2022-04-08 16:02:23,376 => init 1.weight as 1
+2022-04-08 16:02:23,376 => init 1.bias as 0
+2022-04-08 16:02:23,376 => init 3.weight as normal(0, 0.001)
+2022-04-08 16:02:23,377 => init 3.bias as 0
+2022-04-08 16:02:23,385 => init 4.weight as 1
+2022-04-08 16:02:23,385 => init 4.bias as 0
+2022-04-08 16:02:23,385 => init 6.weight as normal(0, 0.001)
+2022-04-08 16:02:23,385 => init 6.bias as 0
+2022-04-08 16:02:23,394 => init 7.weight as 1
+2022-04-08 16:02:23,394 => init 7.bias as 0
+2022-04-08 16:02:23,394 => init final conv weights from normal distribution
+2022-04-08 16:02:23,394 => init 8.weight as normal(0, 0.001)
+2022-04-08 16:02:23,395 => init 8.bias as 0
+2022-04-08 16:02:23,395 => loading pretrained model models/pytorch/imagenet/resnet50-caffe.pth.tar
+2022-04-08 16:02:48,707 => num_images: 66917
+2022-04-08 16:02:51,922 => load 66917 samples
+2022-04-08 16:02:52,110 => num_images: 22306
+2022-04-08 16:02:53,211 => load 22306 samples
+2022-04-08 16:02:55,635 Epoch: [0][0/2092]	Time 2.422s (2.422s)	Speed 13.2 samples/s	Data 0.873s (0.873s)	Loss 12.86443 (12.86443)	Accuracy 0.019 (0.019)
+2022-04-08 16:03:18,622 Epoch: [0][100/2092]	Time 0.218s (0.252s)	Speed 146.7 samples/s	Data 0.000s (0.017s)	Loss 12.52603 (11.09620)	Accuracy 0.028 (0.006)
+2022-04-08 16:03:43,990 Epoch: [0][200/2092]	Time 0.222s (0.253s)	Speed 144.0 samples/s	Data 0.000s (0.025s)	Loss 10.85685 (10.41908)	Accuracy 0.085 (0.033)
+2022-04-08 16:04:09,407 Epoch: [0][300/2092]	Time 0.221s (0.253s)	Speed 145.1 samples/s	Data 0.000s (0.028s)	Loss 8.62395 (10.00734)	Accuracy 0.228 (0.071)
+2022-04-08 16:04:34,905 Epoch: [0][400/2092]	Time 0.225s (0.254s)	Speed 142.3 samples/s	Data 0.000s (0.029s)	Loss 6.91583 (9.63447)	Accuracy 0.320 (0.109)
+2022-04-08 16:05:00,277 Epoch: [0][500/2092]	Time 0.222s (0.254s)	Speed 144.1 samples/s	Data 0.000s (0.030s)	Loss 11.11476 (9.29399)	Accuracy 0.250 (0.140)
+2022-04-08 16:05:25,480 Epoch: [0][600/2092]	Time 0.223s (0.253s)	Speed 143.4 samples/s	Data 0.000s (0.030s)	Loss 9.49416 (9.02832)	Accuracy 0.291 (0.167)
+2022-04-08 16:06:08,553 Epoch: [0][700/2092]	Time 0.217s (0.279s)	Speed 147.4 samples/s	Data 0.000s (0.056s)	Loss 10.28986 (8.82008)	Accuracy 0.336 (0.189)
+2022-04-08 16:06:31,601 Epoch: [0][800/2092]	Time 0.223s (0.273s)	Speed 143.2 samples/s	Data 0.000s (0.050s)	Loss 6.15382 (8.63192)	Accuracy 0.423 (0.208)
+2022-04-08 16:06:54,678 Epoch: [0][900/2092]	Time 0.217s (0.268s)	Speed 147.3 samples/s	Data 0.001s (0.045s)	Loss 6.56054 (8.48301)	Accuracy 0.405 (0.226)
+2022-04-08 16:07:17,772 Epoch: [0][1000/2092]	Time 0.225s (0.264s)	Speed 142.3 samples/s	Data 0.000s (0.042s)	Loss 8.34997 (8.35121)	Accuracy 0.372 (0.241)
+2022-04-08 16:07:40,756 Epoch: [0][1100/2092]	Time 0.225s (0.261s)	Speed 142.4 samples/s	Data 0.000s (0.039s)	Loss 8.50900 (8.23303)	Accuracy 0.372 (0.256)
+2022-04-08 16:08:03,844 Epoch: [0][1200/2092]	Time 0.229s (0.259s)	Speed 139.5 samples/s	Data 0.000s (0.036s)	Loss 5.11549 (8.12901)	Accuracy 0.471 (0.268)
+2022-04-08 16:08:26,822 Epoch: [0][1300/2092]	Time 0.223s (0.256s)	Speed 143.2 samples/s	Data 0.000s (0.034s)	Loss 6.92813 (8.02017)	Accuracy 0.474 (0.280)
+2022-04-08 16:08:49,794 Epoch: [0][1400/2092]	Time 0.223s (0.255s)	Speed 143.2 samples/s	Data 0.000s (0.032s)	Loss 6.32164 (7.92847)	Accuracy 0.384 (0.291)
+2022-04-08 16:09:12,769 Epoch: [0][1500/2092]	Time 0.217s (0.253s)	Speed 147.4 samples/s	Data 0.000s (0.031s)	Loss 8.55255 (7.83416)	Accuracy 0.486 (0.301)
+2022-04-08 16:09:35,726 Epoch: [0][1600/2092]	Time 0.217s (0.251s)	Speed 147.3 samples/s	Data 0.000s (0.029s)	Loss 6.95234 (7.74860)	Accuracy 0.422 (0.310)
+2022-04-08 16:09:58,864 Epoch: [0][1700/2092]	Time 0.224s (0.250s)	Speed 143.1 samples/s	Data 0.000s (0.028s)	Loss 6.25565 (7.66732)	Accuracy 0.464 (0.319)
+2022-04-08 16:10:21,816 Epoch: [0][1800/2092]	Time 0.217s (0.249s)	Speed 147.7 samples/s	Data 0.000s (0.027s)	Loss 5.44777 (7.59404)	Accuracy 0.445 (0.327)
+2022-04-08 16:10:44,837 Epoch: [0][1900/2092]	Time 0.222s (0.248s)	Speed 144.4 samples/s	Data 0.000s (0.026s)	Loss 5.73398 (7.53852)	Accuracy 0.443 (0.334)
+2022-04-08 16:11:07,919 Epoch: [0][2000/2092]	Time 0.223s (0.247s)	Speed 143.2 samples/s	Data 0.000s (0.025s)	Loss 9.00443 (7.47561)	Accuracy 0.473 (0.341)
+2022-04-08 16:11:30,695 Test: [0/698]	Time 0.988 (0.988)	Loss 11.3171 (11.3171)	Accuracy 0.520 (0.520)
+2022-04-08 16:11:48,559 Test: [100/698]	Time 0.152 (0.187)	Loss 12.6814 (11.8594)	Accuracy 0.502 (0.523)
+2022-04-08 16:12:06,402 Test: [200/698]	Time 0.136 (0.183)	Loss 11.9746 (11.8211)	Accuracy 0.539 (0.526)
+2022-04-08 16:12:23,959 Test: [300/698]	Time 0.123 (0.180)	Loss 11.0255 (11.8340)	Accuracy 0.605 (0.526)
+2022-04-08 16:12:41,124 Test: [400/698]	Time 0.115 (0.178)	Loss 12.4165 (11.8167)	Accuracy 0.504 (0.527)
+2022-04-08 16:12:59,257 Test: [500/698]	Time 0.115 (0.179)	Loss 11.9893 (11.8078)	Accuracy 0.517 (0.527)
+2022-04-08 16:13:15,951 Test: [600/698]	Time 0.160 (0.177)	Loss 11.4880 (11.8175)	Accuracy 0.561 (0.527)
+2022-04-08 16:13:35,247 => Writing results json to output/coco/pose_resnet_50/256x192_d256x3_adam_lr1e-3_caffe/results/keypoints_val2017_results.json
+2022-04-08 16:13:52,001 | Arch | Null |
+2022-04-08 16:13:52,002 |---|---|
+2022-04-08 16:13:52,002 | 256x192_pose_resnet_50_d256d256d256 | 0.000 |
+2022-04-08 16:13:52,030 => saving checkpoint to output/coco/pose_resnet_50/256x192_d256x3_adam_lr1e-3_caffe
+2022-04-08 16:14:01,301 Epoch: [1][0/2092]	Time 1.138s (1.138s)	Speed 28.1 samples/s	Data 0.877s (0.877s)	Loss 6.53063 (6.53063)	Accuracy 0.489 (0.489)
+2022-04-08 16:14:24,667 Epoch: [1][100/2092]	Time 0.224s (0.243s)	Speed 142.6 samples/s	Data 0.000s (0.020s)	Loss 5.15404 (6.33173)	Accuracy 0.569 (0.480)
+2022-04-08 16:14:47,531 Epoch: [1][200/2092]	Time 0.214s (0.236s)	Speed 149.4 samples/s	Data 0.000s (0.014s)	Loss 4.77014 (6.12857)	Accuracy 0.443 (0.488)
+2022-04-08 16:15:10,509 Epoch: [1][300/2092]	Time 0.219s (0.234s)	Speed 146.4 samples/s	Data 0.000s (0.012s)	Loss 6.04918 (6.20798)	Accuracy 0.484 (0.491)
+2022-04-08 16:15:33,471 Epoch: [1][400/2092]	Time 0.224s (0.233s)	Speed 143.1 samples/s	Data 0.000s (0.012s)	Loss 5.04964 (6.18109)	Accuracy 0.559 (0.495)
+2022-04-08 16:15:56,448 Epoch: [1][500/2092]	Time 0.215s (0.232s)	Speed 148.5 samples/s	Data 0.000s (0.011s)	Loss 5.56852 (6.17298)	Accuracy 0.548 (0.495)
+2022-04-08 16:16:19,389 Epoch: [1][600/2092]	Time 0.223s (0.232s)	Speed 143.2 samples/s	Data 0.000s (0.011s)	Loss 6.19297 (6.16785)	Accuracy 0.463 (0.495)
+2022-04-08 16:16:42,411 Epoch: [1][700/2092]	Time 0.233s (0.231s)	Speed 137.1 samples/s	Data 0.000s (0.010s)	Loss 7.98500 (6.13883)	Accuracy 0.530 (0.496)
+2022-04-08 16:17:05,418 Epoch: [1][800/2092]	Time 0.232s (0.231s)	Speed 138.0 samples/s	Data 0.000s (0.010s)	Loss 8.02007 (6.11270)	Accuracy 0.458 (0.499)
+2022-04-08 16:17:28,482 Epoch: [1][900/2092]	Time 0.216s (0.231s)	Speed 148.1 samples/s	Data 0.000s (0.010s)	Loss 4.81776 (6.10091)	Accuracy 0.387 (0.501)
+2022-04-08 16:17:51,391 Epoch: [1][1000/2092]	Time 0.219s (0.231s)	Speed 145.9 samples/s	Data 0.000s (0.010s)	Loss 8.06043 (6.09386)	Accuracy 0.442 (0.503)
+2022-04-08 16:18:14,460 Epoch: [1][1100/2092]	Time 0.217s (0.231s)	Speed 147.7 samples/s	Data 0.000s (0.010s)	Loss 5.34244 (6.07468)	Accuracy 0.490 (0.505)
+2022-04-08 16:18:37,550 Epoch: [1][1200/2092]	Time 0.218s (0.231s)	Speed 146.8 samples/s	Data 0.000s (0.010s)	Loss 6.65060 (6.05659)	Accuracy 0.523 (0.507)
+2022-04-08 16:19:00,626 Epoch: [1][1300/2092]	Time 0.224s (0.231s)	Speed 142.6 samples/s	Data 0.000s (0.010s)	Loss 6.94309 (6.03495)	Accuracy 0.492 (0.509)
+2022-04-08 16:19:23,770 Epoch: [1][1400/2092]	Time 0.221s (0.231s)	Speed 144.9 samples/s	Data 0.000s (0.010s)	Loss 3.70190 (6.01331)	Accuracy 0.529 (0.510)
+2022-04-08 16:19:46,868 Epoch: [1][1500/2092]	Time 0.215s (0.231s)	Speed 148.9 samples/s	Data 0.000s (0.010s)	Loss 4.66031 (5.99719)	Accuracy 0.604 (0.512)
+2022-04-08 16:20:09,914 Epoch: [1][1600/2092]	Time 0.218s (0.231s)	Speed 146.6 samples/s	Data 0.000s (0.010s)	Loss 8.09139 (5.97907)	Accuracy 0.524 (0.514)
+2022-04-08 16:20:33,028 Epoch: [1][1700/2092]	Time 0.223s (0.231s)	Speed 143.7 samples/s	Data 0.001s (0.010s)	Loss 5.84013 (5.96446)	Accuracy 0.561 (0.516)
+2022-04-08 16:20:56,007 Epoch: [1][1800/2092]	Time 0.217s (0.231s)	Speed 147.4 samples/s	Data 0.000s (0.010s)	Loss 5.29877 (5.95377)	Accuracy 0.557 (0.517)
+2022-04-08 16:21:19,100 Epoch: [1][1900/2092]	Time 0.224s (0.231s)	Speed 143.0 samples/s	Data 0.000s (0.010s)	Loss 5.84339 (5.93503)	Accuracy 0.461 (0.519)
+2022-04-08 16:21:42,266 Epoch: [1][2000/2092]	Time 0.225s (0.231s)	Speed 142.0 samples/s	Data 0.000s (0.010s)	Loss 5.49754 (5.92707)	Accuracy 0.521 (0.521)
+2022-04-08 16:22:04,315 Test: [0/698]	Time 1.006 (1.006)	Loss 9.8443 (9.8443)	Accuracy 0.586 (0.586)
+2022-04-08 16:22:20,369 Test: [100/698]	Time 0.150 (0.169)	Loss 11.4777 (10.5087)	Accuracy 0.566 (0.590)
+2022-04-08 16:22:36,922 Test: [200/698]	Time 0.124 (0.167)	Loss 10.9520 (10.4585)	Accuracy 0.557 (0.591)
+2022-04-08 16:22:53,654 Test: [300/698]	Time 0.220 (0.167)	Loss 9.8163 (10.4566)	Accuracy 0.675 (0.592)
+2022-04-08 16:23:09,648 Test: [400/698]	Time 0.132 (0.165)	Loss 11.0352 (10.4513)	Accuracy 0.577 (0.593)
+2022-04-08 16:23:25,823 Test: [500/698]	Time 0.234 (0.165)	Loss 10.8466 (10.4453)	Accuracy 0.559 (0.594)
+2022-04-08 16:23:42,178 Test: [600/698]	Time 0.124 (0.164)	Loss 10.1964 (10.4495)	Accuracy 0.586 (0.593)
+2022-04-08 16:24:00,802 => Writing results json to output/coco/pose_resnet_50/256x192_d256x3_adam_lr1e-3_caffe/results/keypoints_val2017_results.json
+2022-04-08 16:24:18,289 | Arch | Null |
+2022-04-08 16:24:18,290 |---|---|
+2022-04-08 16:24:18,290 | 256x192_pose_resnet_50_d256d256d256 | 0.000 |
+2022-04-08 16:24:18,293 => saving checkpoint to output/coco/pose_resnet_50/256x192_d256x3_adam_lr1e-3_caffe
+2022-04-08 16:24:20,360 saving final model state to output/coco/pose_resnet_50/256x192_d256x3_adam_lr1e-3_caffe/final_state.pth.tar

@@ -1,0 +1,80 @@
+2021-12-04 23:59:51,107 Namespace(cfg='experiments/coco/resnet50/256x192_d256x3_adam_lr1e-3_caffe.yaml', coco_bbox_file=None, flip_test=True, frequent=100, gpus=None, model_file='models/pytorch/pose_coco/pose_resnet_50_256x192.pth.tar', post_process=False, shift_heatmap=False, use_detect_bbox=False, workers=None)
+2021-12-04 23:59:51,109 {'CUDNN': {'BENCHMARK': True, 'DETERMINISTIC': False, 'ENABLED': True},
+ 'DATASET': {'DATASET': 'coco',
+             'DATA_FORMAT': 'jpg',
+             'FLIP': True,
+             'HYBRID_JOINTS_TYPE': '',
+             'ROOT': 'data/coco/',
+             'ROT_FACTOR': 40,
+             'SCALE_FACTOR': 0.3,
+             'SELECT_DATA': False,
+             'TEST_SET': 'val2017',
+             'TRAIN_SET': 'train2017'},
+ 'DATA_DIR': '',
+ 'DEBUG': {'DEBUG': True,
+           'SAVE_BATCH_IMAGES_GT': True,
+           'SAVE_BATCH_IMAGES_PRED': True,
+           'SAVE_HEATMAPS_GT': True,
+           'SAVE_HEATMAPS_PRED': True},
+ 'GPUS': '0',
+ 'LOG_DIR': 'log',
+ 'LOSS': {'USE_TARGET_WEIGHT': True},
+ 'MODEL': {'EXTRA': {'DECONV_WITH_BIAS': False,
+                     'FINAL_CONV_KERNEL': 1,
+                     'HEATMAP_SIZE': array([48, 64]),
+                     'NUM_DECONV_FILTERS': [256, 256, 256],
+                     'NUM_DECONV_KERNELS': [4, 4, 4],
+                     'NUM_DECONV_LAYERS': 3,
+                     'NUM_LAYERS': 50,
+                     'SIGMA': 2,
+                     'TARGET_TYPE': 'gaussian'},
+           'IMAGE_SIZE': array([192, 256]),
+           'INIT_WEIGHTS': True,
+           'NAME': 'pose_resnet',
+           'NUM_JOINTS': 17,
+           'PRETRAINED': 'models/pytorch/imagenet/resnet50-caffe.pth.tar',
+           'STYLE': 'caffe'},
+ 'OUTPUT_DIR': 'output',
+ 'PRINT_FREQ': 100,
+ 'TEST': {'BATCH_SIZE': 32,
+          'BBOX_THRE': 1.0,
+          'COCO_BBOX_FILE': 'data/coco/person_detection_results/COCO_val2017_detections_AP_H_56_person.json',
+          'FLIP_TEST': True,
+          'IMAGE_THRE': 0.0,
+          'IN_VIS_THRE': 0.2,
+          'MODEL_FILE': 'models/pytorch/pose_coco/pose_resnet_50_256x192.pth.tar',
+          'NMS_THRE': 1.0,
+          'OKS_THRE': 0.9,
+          'POST_PROCESS': True,
+          'SHIFT_HEATMAP': True,
+          'USE_GT_BBOX': True},
+ 'TRAIN': {'BATCH_SIZE': 32,
+           'BEGIN_EPOCH': 0,
+           'CHECKPOINT': '',
+           'END_EPOCH': 140,
+           'GAMMA1': 0.99,
+           'GAMMA2': 0.0,
+           'LR': 0.001,
+           'LR_FACTOR': 0.1,
+           'LR_STEP': [90, 120],
+           'MOMENTUM': 0.9,
+           'NESTEROV': False,
+           'OPTIMIZER': 'adam',
+           'RESUME': False,
+           'SHUFFLE': True,
+           'WD': 0.0001},
+ 'WORKERS': 4}
+2021-12-04 23:59:51,415 => loading model from models/pytorch/pose_coco/pose_resnet_50_256x192.pth.tar
+2021-12-04 23:59:54,967 => num_images: 22306
+2021-12-04 23:59:55,884 => load 22306 samples
+2021-12-04 23:59:57,668 Test: [0/698]	Time 1.762 (1.762)	Loss 19.4618 (19.4618)	Accuracy 0.083 (0.083)
+2021-12-05 00:00:19,499 Test: [100/698]	Time 0.203 (0.233)	Loss 20.1597 (19.4217)	Accuracy 0.075 (0.091)
+2021-12-05 00:00:41,543 Test: [200/698]	Time 0.201 (0.227)	Loss 20.1683 (19.3836)	Accuracy 0.070 (0.091)
+2021-12-05 00:01:03,733 Test: [300/698]	Time 0.206 (0.225)	Loss 20.7721 (19.4399)	Accuracy 0.103 (0.092)
+2021-12-05 00:01:25,767 Test: [400/698]	Time 0.222 (0.224)	Loss 20.1418 (19.4484)	Accuracy 0.092 (0.092)
+2021-12-05 00:01:47,574 Test: [500/698]	Time 0.216 (0.223)	Loss 20.4083 (19.4533)	Accuracy 0.085 (0.092)
+2021-12-05 00:02:09,366 Test: [600/698]	Time 0.203 (0.222)	Loss 19.6183 (19.4490)	Accuracy 0.096 (0.092)
+2021-12-05 00:02:33,889 => Writing results json to output/coco/pose_resnet_50/256x192_d256x3_adam_lr1e-3_caffe/results/keypoints_val2017_results.json
+2021-12-05 00:02:51,650 | Arch | Null |
+2021-12-05 00:02:51,650 |---|---|
+2021-12-05 00:02:51,650 | 256x192_pose_resnet_50_d256d256d256 | 0.000 |
